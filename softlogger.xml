@@ -24,12 +24,12 @@
 	<defaultScanRate>1000</defaultScanRate>
 	<channel>
 		<serial>
-			<comport>/dev/ttyUSB0</comport>
-			<baud>19200</baud>
+			<comport>COM2</comport>
+			<baud>9600</baud>
 		</serial>
 		<device>
 			<unitId>1</unitId>
-			<description>Enviroboard</description>
+			<description>SerialEmu01</description>
 			<retryInterval>5000</retryInterval>
 			<maxRetryInterval>5000</maxRetryInterval>
 
@@ -38,131 +38,26 @@
 			</outputModule>
 			<outputModule class="ca.brood.softlogger.dataoutput.CSVOutputModule">
 				<configValue name="logIntervalSeconds">5</configValue>
-				<configValue name="newFilePeriodMinutes">1</configValue>
+				<configValue name="newFilePeriodMinutes">5</configValue>
 				<configValue name="csvSubdirectory">csv</configValue>
 				<configValue name="completedFileDirectory">/persistent/softlogger/csv/</configValue>
 			</outputModule>
 			
 			<dataRegister>
-				<fieldName>Runtime - Minutes</fieldName>
-				<registerAddress>300001</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Runtime - Days</fieldName>
-				<registerAddress>300002</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Reset Reason</fieldName>
-				<registerAddress>300003</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Major</fieldName>
-				<registerAddress>300004</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Minor</fieldName>
-				<registerAddress>300005</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Revision</fieldName>
-				<registerAddress>300006</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Reset Count</fieldName>
+				<fieldName>MyData1</fieldName>
 				<registerAddress>400001</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-
-			<dataRegister>
-				<fieldName>Pipe Inlet (C)</fieldName>
-				<registerAddress>300101</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00303</guid>
+				<guid>D25STC00001</guid>
 			</dataRegister>
 			<dataRegister>
-				<fieldName>Spare Indoor Temp T1 (C)</fieldName>
-				<registerAddress>300102</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00308</guid>
+				<fieldName>MyData2</fieldName>
+				<registerAddress>400002</registerAddress>
+				<guid>D25STC00002</guid>
 			</dataRegister>
-			<dataRegister>
-				<fieldName>Pipe A Outlet (C)</fieldName>
-				<registerAddress>300103</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00304</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Pipe B Outlet (C)</fieldName>
-				<registerAddress>300104</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00305</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Underground Bed A (C)</fieldName>
-				<registerAddress>300105</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00306</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Underground Bed B (C)</fieldName>
-				<registerAddress>300106</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00307</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Bed A Surface (C)</fieldName>
-				<registerAddress>300107</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00310</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Bed B Surface (C)</fieldName>
-				<registerAddress>300108</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00309</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Indoor Air (C)</fieldName>
-				<registerAddress>300109</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00311</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Outdoor Air (C)</fieldName>
-				<registerAddress>300110</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/192502LETA01-Ideal.lut</dataFunction>
-				<guid>D25STC00312</guid>
-			</dataRegister>
-
-			<dataRegister>
-				<fieldName>Indoor Air (%RH)</fieldName>
-				<registerAddress>300201</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/HIH5031.lut</dataFunction>
-				<guid>D25SRH00136</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Outdoor Air (%RH)</fieldName>
-				<registerAddress>300202</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/HIH5031.lut</dataFunction>
-				<guid>D25SRH00137</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Insolation (W/m^2)</fieldName>
-				<registerAddress>300203</registerAddress>
-				<dataFunction class="ca.brood.softlogger.datafunction.LookupTableDataFunction">lut/SP-215.lut</dataFunction>
-				<guid>D25SSR00008</guid>
-			</dataRegister>
-		</device>
-		<!--
+		</device>	
+		
 		<device>
 			<unitId>2</unitId>
-			<description>MAFK</description>
+			<description>SerialEmu02</description>
 			<retryInterval>5000</retryInterval>
 			<maxRetryInterval>5000</maxRetryInterval>
 
@@ -171,126 +66,54 @@
 			</outputModule>
 			<outputModule class="ca.brood.softlogger.dataoutput.CSVOutputModule">
 				<configValue name="logIntervalSeconds">5</configValue>
-				<configValue name="newFilePeriodMinutes">1</configValue>
+				<configValue name="newFilePeriodMinutes">5</configValue>
 				<configValue name="csvSubdirectory">csv</configValue>
 				<configValue name="completedFileDirectory">/persistent/softlogger/csv/</configValue>
 			</outputModule>
 			
 			<dataRegister>
-				<fieldName>Runtime - Minutes</fieldName>
-				<registerAddress>300001</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Runtime - Days</fieldName>
-				<registerAddress>300002</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Reset Reason</fieldName>
-				<registerAddress>300003</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Major</fieldName>
-				<registerAddress>300004</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Minor</fieldName>
-				<registerAddress>300005</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Firmware Revision</fieldName>
-				<registerAddress>300006</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Reset Count</fieldName>
+				<fieldName>MyData1</fieldName>
 				<registerAddress>400001</registerAddress>
-				<guid>Unknown</guid>
-			</dataRegister>
-
-			<dataRegister>
-				<fieldName>AD7705 Raw Measurement 1</fieldName>
-				<registerAddress>300101</registerAddress>
-				<guid>Unknown</guid>
+				<guid>D25STC00003</guid>
 			</dataRegister>
 			<dataRegister>
-				<fieldName>AD7705 Raw Measurement 2</fieldName>
-				<registerAddress>300102</registerAddress>
-				<guid>Unknown</guid>
+				<fieldName>MyData2</fieldName>
+				<registerAddress>400002</registerAddress>
+				<guid>D25STC00004</guid>
 			</dataRegister>
-
-			<dataRegister>
-				<fieldName>MS5607 Pressure</fieldName>
-				<registerAddress>300301</registerAddress>
-				<size type="float">2</size>
-				<guid>Unknown</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>MS5607 Temperature</fieldName>
-				<registerAddress>300303</registerAddress>
-				<size type="float">2</size>
-				<guid>Unknown</guid>
-			</dataRegister>
-
-			<dataRegister>
-				<fieldName>SDP610 Differential Pressure</fieldName>
-				<registerAddress>300401</registerAddress>
-				<size type="float">2</size>
-				<guid>Unknown</guid>
-			</dataRegister>
-
-			<dataRegister>
-				<fieldName>Volumetric Flowrate (m^3/s)</fieldName>
-				<registerAddress>300501</registerAddress>
-				<size type="float">2</size>
-				<guid>D25SFLS00021</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Mass Flowrate (Kg/s)</fieldName>
-				<registerAddress>300503</registerAddress>
-				<size type="float">2</size>
-				<guid>D25SFKGS00008</guid>
-			</dataRegister>
-			<dataRegister>
-				<fieldName>Air Density (Kg/m^3)</fieldName>
-				<registerAddress>300505</registerAddress>
-				<size type="float">2</size>
-				<guid>Unknown</guid>
-			</dataRegister>
-
-			<configRegister>
-				<fieldName>SDP610 Differential Pressure Divider</fieldName>
-				<registerAddress>400401</registerAddress>
-				<value>1200</value>
-			</configRegister>
-
-			<configRegister>
-				<fieldName>System Mode</fieldName>
-				<registerAddress>400501</registerAddress>
-				<value>1</value>
-			</configRegister>
-			<configRegister>
-				<fieldName>Pipe Diameter (mm)</fieldName>
-				<registerAddress>400502</registerAddress>
-				<value>101</value>
-			</configRegister>
-			<configRegister>
-				<fieldName>Orifice Diameter (mm)</fieldName>
-				<registerAddress>400503</registerAddress>
-				<value>84</value>
-			</configRegister>
-
-			<configRegister>
-				<fieldName>Coefficient of Discharge</fieldName>
-				<registerAddress>400551</registerAddress>
-				<size type="float">2</size>
-				<value>0.65</value>
-			</configRegister>
 		</device>
-		-->
+	</channel>
+		<channel>
+		<tcp>
+			<host>10.0.0.54</host>
+			<port>20000</port>
+		</tcp>
+		<device>
+			<unitId>1</unitId>
+			<description>iENRAU32</description>
+			<retryInterval>5000</retryInterval>
+			<maxRetryInterval>5000</maxRetryInterval>
+
+			<outputModule class="ca.brood.softlogger.dataoutput.DebugOutputModule">
+				<configValue name="logIntervalSeconds">5</configValue>
+			</outputModule>
+			<outputModule class="ca.brood.softlogger.dataoutput.CSVOutputModule">
+				<configValue name="logIntervalSeconds">5</configValue>
+				<configValue name="newFilePeriodMinutes">5</configValue>
+				<configValue name="csvSubdirectory">csv</configValue>
+				<configValue name="completedFileDirectory">/persistent/softlogger/csv/</configValue>
+			</outputModule>
+			
+			<dataRegister>
+				<fieldName>MyData1</fieldName>
+				<registerAddress>400001</registerAddress>
+				<guid>D25STC00005</guid>
+			</dataRegister>
+			<dataRegister>
+				<fieldName>MyData2</fieldName>
+				<registerAddress>400002</registerAddress>
+				<guid>D25STC00006</guid>
+			</dataRegister>
+		</device>	
 	</channel>
 </softlogger>
